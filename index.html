@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="output.css" rel="stylesheet">
     <script src="js/script.js"></script>
+    <script src="js/sendScript.js" defer></script>
     <style>
         .active-link {
             color: #b4af91;
@@ -32,11 +33,13 @@
             <h2 class="text-[25px] md:text-[35px] text-white font-semibold mb-1 md:w-fit w-[240px]">Оставить заявку</h2>
             <p class="text-[12px] md:text-[14px] text-white text-wrap mb-5 md:w-full w-[240px] " style="color: #9e9e82">И мы перезвоним вам в течении 15 минут.</p>
             <div class="flex flex-col gap-4 items-center">
-                <input class="text-white text-[20px] md:w-[280px] w-[240px] outline-0  border-b border-white bg-transparent p-2" placeholder="Имя:"/>
-                <input class="text-white text-[20px] md:w-[280px] w-[240px] outline-0  border-b border-white bg-transparent p-2" placeholder="Телефон:"/>
-                <input class="text-white text-[20px] md:w-[280px] w-[240px] outline-0  border-b border-white bg-transparent p-2" placeholder="Комментарий:"/>
-                <button class="pl-4 mt-8 w-full text-[20px] text-white pr-4 pt-2 pb-2 border hover:!bg-transparent duration-300 ease-in-out" style="border-color: #ff8f00; background: #ff8f00">Заказать звонок</button>
-
+                <form class="flex flex-col gap-4 items-center" action="sender.php" method="post">
+                <input required id="name" name="name" class="text-white text-[20px] md:w-[280px] w-[240px] outline-0  border-b border-white bg-transparent p-2" placeholder="Имя:"/>
+                <input required id="phone" name="phone" class="text-white text-[20px] md:w-[280px] w-[240px] outline-0  border-b border-white bg-transparent p-2" placeholder="Телефон:"/>
+                <input required id="text" name="text" class="text-white text-[20px] md:w-[280px] w-[240px] outline-0  border-b border-white bg-transparent p-2" placeholder="Комментарий:"/>
+                <button  type="button" class=" send-formpl-4 mt-8 w-full text-[20px] text-white pr-4 pt-2 pb-2 border hover:!bg-transparent duration-300 ease-in-out" style="border-color: #ff8f00; background: #ff8f00">Заказать звонок</button>
+                    <div class="status"></div>
+                </form>
             </div>
         </div>
     </div>
@@ -219,5 +222,9 @@
        </div>
     </section>
 </main>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="js/jquery.maskedinput.js"></script>
+<script src="js/jquery.validate.min.js"></script>
 </body>
 </html>
