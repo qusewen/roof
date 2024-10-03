@@ -794,6 +794,11 @@ video {
   max-height: 246px;
 }
 
+.max-h-fit {
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
 .min-h-\[650px\] {
   min-height: 650px;
 }
@@ -1204,6 +1209,10 @@ video {
   padding-bottom: 1.75rem;
 }
 
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -1382,6 +1391,15 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:max-h-fit {
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+
+  .sm\:max-h-\[650px\] {
+    max-height: 650px;
+  }
+
   .sm\:w-\[370px\] {
     width: 370px;
   }
@@ -1519,6 +1537,10 @@ video {
 
   .md\:pt-\[120px\] {
     padding-top: 120px;
+  }
+
+  .md\:pb-10 {
+    padding-bottom: 2.5rem;
   }
 
   .md\:text-\[35px\] {
