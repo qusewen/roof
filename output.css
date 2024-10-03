@@ -1400,6 +1400,10 @@ video {
     max-height: 650px;
   }
 
+  .sm\:min-h-\[650px\] {
+    min-height: 650px;
+  }
+
   .sm\:w-\[370px\] {
     width: 370px;
   }
