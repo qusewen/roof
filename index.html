@@ -12,6 +12,7 @@
     <title>Кровельные работы</title>
     <link rel="shortcut icon" href="" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="output.css" rel="stylesheet">
     <script src="js/script.js"></script>
     <script src="js/sendScript.js" defer></script>
@@ -20,7 +21,14 @@
             color: #b4af91;
             border-bottom: 2px solid #b4af91;
         }
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
 
+        .swiper-slide {
+            overflow: hidden;
+        }
     </style>
 </head>
 <body style="background: #222222">
@@ -207,18 +215,71 @@
     </section>
     <section id="advantages">
         <div class="container mx-auto p-2 pt-7 text-white">
-            <div>
-                <h2 class="text-[30px] mb-7">Наши работы</h2>
-                    <div id="slider">
-                        <div class="slider__body p-4 flex items-center justify-between" style="background: #333333">
-                            <div class="prev__slide hover:scale-110"><img src="assets/prev.svg" alt="prevslide"></div>
-                            <div class="img_slide flex justify-center cursor-pointer sm:w-[700px] sm:h-[400px] w-[300px] h-[280px]"></div>
-                            <div class="next__slide hover:scale-110 cursor-pointer"><img src="assets/next.svg" alt="nextslide"></div>
+            <h2 class="text-[30px] mb-7">Наши работы</h2>
+
+
+            <div style="--swiper-navigation-color: #989898; --swiper-pagination-color: #989898; background: #333333" class="swiper mySwiper w-[90%] h-[450px]" >
+                <div class="swiper-wrapper h-[600px]">
+                    <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                            <img src="assets/item1.jpg" alt="item-1" />
                         </div>
                     </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                            <img src="assets/item2.jpg" alt="item-2" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                            <img src="assets/item3.jpg" alt="item-3" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                            <img src="assets/item4.jpg" alt="item-4" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                            <img src="assets/item5.jpg" alt="item-5" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                            <img src="assets/item6.jpg" alt="item-6" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                            <img src="assets/item7.jpg" alt="item-7" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                            <img src="assets/item8.jpg" alt="item-8" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                            <img src="assets/item9.jpg" alt="item-9"/>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                            <img src="assets/item10.jpg" alt="item-10"/>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                            <img src="assets/item11.jpg" alt="item-11"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
-
-
         </div>
     </section>
 
@@ -228,12 +289,20 @@
 <script src="js/jquery.maskedinput.js"></script>
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/slider.js"></script>
-
-<link rel="stylesheet" href="./dist/css/slider-pro.min.css" />
-
-<script src="http://code.jquery.com/jquery.min.js"></script>
-
-<script src="/dist/js/jquery.sliderPro.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        zoom: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
 
 </body>
 </html>
