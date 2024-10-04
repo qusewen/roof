@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(isOpenModal){
                 modal.classList.add('flex')
                 modal.classList.remove('hidden')
+                    document.body.style.overflow = 'hidden';
                 }else{
                     modal.classList.add('hidden')
+                    document.body.style.overflow = '';
                 }
             })
 
