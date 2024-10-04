@@ -25,10 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleCloseNavBar = () => {
         isBurgerOpen = false
         navBar.forEach((nav)=> {
-            nav.classList.remove('absolute', 'top-0', 'left-0','flex-col', 'flex', 'w-full', 'h-full')
+            document.body.style.overflow = '';
+            nav.classList.remove('fixed', 'top-0', 'left-0','flex-col', 'flex', 'w-full', 'h-full')
             nav.style.position = 'relative'
             nav.style = ''
             nav.classList.add('hidden', 'justify-between','mt-[15px]')
+        })
+        burgerMenuButton.forEach((burgerButton) => {
+                burgerButton.classList.remove('fixed', 'top-[20px]', 'r-[20px]')
+                burgerButton.style.top = ''
+                burgerButton.style.right = ''
+
+
         })
     }
     const highlightLink = () => {
@@ -60,21 +68,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const toggleBurgerMenu = () => {
 
+
+
         navBar.forEach((nav) => {
             isBurgerOpen=!isBurgerOpen
             if(isBurgerOpen){
-                nav.classList.add('absolute', 'top-0', 'left-0','flex-col', 'flex', 'w-full', 'h-full', 'p-2', 'items-center', 'z-50')
-                nav.style.position = 'absolute'
+                document.body.style.overflow = 'hidden';
+                nav.classList.add('fixed', 'top-0', 'left-0','flex-col', 'flex', 'w-full', 'h-full', 'p-2', 'items-center', 'z-50')
+                nav.style.position = 'fixed'
                 nav.style.background = '#222222'
                 nav.style.justifyContent = 'center'
                 nav.classList.remove('hidden', 'justify-between','mt-[15px]')
             }else{
-                nav.classList.remove('absolute', 'top-0', 'left-0','flex-col', 'flex', 'w-full', 'h-full')
+                document.body.style.overflow = '';
+                nav.classList.remove('fixed', 'top-0', 'left-0','flex-col', 'flex', 'w-full', 'h-full')
                 nav.style.position = 'relative'
                 nav.style = ''
                 nav.classList.add('hidden', 'justify-between','mt-[15px]')
             }
         })
+
+        burgerMenuButton.forEach((burgerButton) => {
+            if(isBurgerOpen){
+                burgerButton.classList.add('fixed')
+                burgerButton.style.top = '20px'
+                burgerButton.style.right = '20px'
+
+            }else{
+                burgerButton.classList.remove('fixed', 'top-[20px]', 'r-[20px]')
+                burgerButton.style.top = ''
+                burgerButton.style.right = ''
+
+            }
+        })
+
         crossAnimation()
 
     }
