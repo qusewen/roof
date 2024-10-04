@@ -39,6 +39,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         })
     }
+
+
+    const sections = document.querySelectorAll('section');
+
+    const updateURL = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                history.replaceState(null, null, `#${id}`);
+                highlightLink()
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(updateURL, {
+        threshold: 0.1 // Порог видимости 50%
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
     const highlightLink = () => {
         links.forEach((link) => {
             if (link.href === window.location.href) {
