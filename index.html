@@ -10,7 +10,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>Кровельные работы</title>
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="output.css" rel="stylesheet">
@@ -31,7 +31,7 @@
         }
     </style>
 </head>
-<body style="background: #222222">
+<body style="background: #222222" class="scroll-smooth">
 <header class="header overflow-x-hidden fixed z-[52] w-full" style="background: #222222; z-index: 52">
     <div class="w-full modal-body hidden z-[60] h-full fixed left-0 top-0 inset-0 bg-black bg-opacity-30 items-center justify-center">
         <div class=" modal relative w-fit min-w-[300px] h-fit backdrop-blur-sm bg-black bg-opacity-40 z-50 md:pt-[120px] md:pl-[60px] md:pr-[60px] md:pb-[60px] pt-[80px] pr-[30px] pl-[30px] pb-[30px] flex flex-col items-start border border-white">
@@ -80,6 +80,7 @@
                     <nav class="gap-5 hidden lg:flex text-white text-[18px] mt-[15px] navbar left-0 top-0 z-10">
                         <a href="#" class="nav-link">Главная</a>
                         <a href="#work" class="nav-link">Услуги</a>
+                        <a href="#pay" class="nav-link">Оплата</a>
                         <a href="#advantages" class="nav-link">Работы </a>
                         <a href="#reviews" class="nav-link">Отзывы</a>
                         <a href="#contact" class="nav-link">Контакты</a>
@@ -97,7 +98,7 @@
     </div>
 </header>
 <main>
-    <section id="" style="background: url('./assets/roof2.jpg') no-repeat center" class="!bg-cover relative pb-24 sm:pt-[120px] pt-[180px]">
+    <section id="#" style="background: url('./assets/roof2.jpg') no-repeat center" class="!bg-cover relative pb-24 sm:pt-[120px] pt-[180px]">
         <div class="absolute inset-0 bg-black bg-opacity-70 "></div>
         <div class=" z-10 container mx-auto sm:pt-24 pt-3 pr-2 pl-2 relative">
             <div class="mb-12">
@@ -213,6 +214,29 @@
            </div>
        </div>
     </section>
+    <section id="pay" class="pb-[25px]">
+        <div class="container mx-auto text-white ">
+            <h2 class="mt-7 mb-7 text-[30px]">Способы оплаты</h2>
+            <ul class="flex flex-wrap gap-5">
+                <li class="flex gap-2 items-center w-fit p-4 bg-[#333333]">
+                    <img class="w-[40px] h-[40px]" alt="cash" src="assets/cash.svg"/>
+                    <p class="text-[22px]">Наличными</p>
+                </li>
+                <li class="flex gap-2 items-center w-fit p-4 bg-[#333333]">
+                    <img class="w-[40px] h-[40px]" src="assets/card.svg" alt="card"/>
+                    <p class="text-[22px]">Безналичный расчет</p>
+                </li>
+                <li class="flex gap-2 items-center w-fit p-4 bg-[#333333]">
+                    <img src="assets/file.svg" class="w-[40px] h-[40px]" alt="file"/>
+                    <p class="text-[22px]">УКАЗ ПРЕЗИДЕНТА РЕСПУБЛИКИ БЕЛАРУСЬ от 4 июля 2017 г. № 240 </p>
+                </li>
+                <li class="flex gap-2 items-center w-fit p-4 bg-[#333333]">
+                    <img src="assets/bank.svg" class="w-[40px] h-[40px]" alt="bank"/>
+                    <p class="text-[22px]">Кредит</p>
+                </li>
+            </ul>
+        </div>
+    </section>
     <section id="advantages">
         <div class="container mx-auto p-2 pt-7 text-white">
             <h2 class="text-[30px] mb-7">Наши работы</h2>
@@ -282,7 +306,7 @@
             </div>
         </div>
     </section>
-<section id="reviews" class="p-2 pb-7">
+    <section id="reviews" class="p-2 pb-7">
     <div class="container mx-auto text-white">
         <h2 class="text-[30px] mb-7 font-semibold">Отзывы</h2>
         <div class="flex flex-col justify-center gap-2 items-center lg:flex-row lg:justify-between lg:flex-wrap">
@@ -350,7 +374,8 @@
             <h2 class="text-[30px] mb-7 font-semibold">Контакты</h2>
             <div class="flex flex-col lg:flex-row lg:justify-between">
                 <div class="bg-[#333333] p-3 lg:w-[35%]">
-                    <p class="mb-3 text-[18px]">Связаться с нами можно следующим способом:</p>
+                    <p class="text-[18px]">Хотите получить предварительный расчет стоимости работ по вашей крыше?</p>
+                    <p class="mb-2 text-[18px]">Заполните форму или свяжитесь с нашим специалистом.</p>
                     <ul class="gap-2 flex flex-col">
                         <li class="flex gap-2">Телефон
                             <a target="_blank"  href="tel:+375295432080" class=" text-[#989898] flex gap-2 items-center">

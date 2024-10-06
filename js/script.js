@@ -10,6 +10,30 @@ document.addEventListener('DOMContentLoaded', () => {
     let isBurgerOpen = false
     let isOpenModal = false
 
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            if (targetId) {
+                const targetElement = document.getElementById(targetId);
+                const offset = window.innerHeight / 2 - targetElement.offsetHeight / 2;
+                window.scrollTo({
+                    top: targetElement.offsetTop - offset,
+                    behavior: 'smooth'
+                });
+                document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active-link'));
+                this.classList.add('active-link');
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active-link'));
+            }
+        });
+    });
+
     const toggleModal = () => {
 
         modalBody.forEach((modal)=> {
@@ -42,26 +66,26 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    //
+    // const sections = document.querySelectorAll('section');
+    //
+    // const updateURL = (entries) => {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             const id = entry.target.id;
+    //             history.replaceState(null, null, `#${id}`);
+    //             highlightLink()
+    //         }
+    //     });
+    // };
 
-    const sections = document.querySelectorAll('section');
-
-    const updateURL = (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.id;
-                history.replaceState(null, null, `#${id}`);
-                highlightLink()
-            }
-        });
-    };
-
-    const observer = new IntersectionObserver(updateURL, {
-        threshold: 0.1 // Порог видимости 50%
-    });
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    // const observer = new IntersectionObserver(updateURL, {
+    //     threshold: 1 // Порог видимости 50%
+    // });
+    //
+    // sections.forEach(section => {
+    //     observer.observe(section);
+    // });
     const highlightLink = () => {
         links.forEach((link) => {
             if (link.href === window.location.href) {
