@@ -4,10 +4,10 @@ header('Content-Type: text/html; charset=utf-8; Content-Transfer-Encoding: utf-8
 	$phone = $_POST['phone'];
     	$text = $_POST['text'];
 
-	$to = "housetop.mogilev@gmail.com";
+	$to = "vitaly.avseikov@yandex.by";
 	$date = date ("d.m.Y");
 	$time = date ("h:i");
-	$from = "no-reply@example.com";
+	$from = "vitaly.avseikov@yandex.by";
 	$subject = "Заявка c сайта";
 
 
