@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: text/html; charset=utf-8; Content-Transfer-Encoding: utf-8; Reply-To:no-reply@example.com';);
+    $header('Content-Type: text/html; charset=utf-8');
     $name = $_POST['name'];
 	$phone = $_POST['phone'];
     	$text = $_POST['text'];
@@ -7,7 +7,7 @@ header('Content-Type: text/html; charset=utf-8; Content-Transfer-Encoding: utf-8
 	$to = "vitaly.avseikov@yandex.by";
 	$date = date ("d.m.Y");
 	$time = date ("h:i");
-	$from = "vitaly.avseikov@yandex.by";
+	$from = $email;
 	$subject = "Заявка c сайта";
 
 
