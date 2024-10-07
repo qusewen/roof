@@ -1,13 +1,12 @@
 <?php
-    $header('Content-Type: text/html; charset=utf-8');
     $name = $_POST['name'];
 	$phone = $_POST['phone'];
-    	$text = $_POST['text'];
+    $text = $_POST['text'];
 
-	$to = "vitaly.avseikov@yandex.by";
+	$to = "housetop.mogilev@gmail.com";
 	$date = date ("d.m.Y");
 	$time = date ("h:i");
-	$from = $email;
+	$from = replyto@example.ru;
 	$subject = "Заявка c сайта";
 
 
@@ -16,6 +15,8 @@
     Имя: $name
     Телефон: $phone
     Коментарий: $text";
-	mail($to, $subject, $msg, "From: $from ");
+	$headers = "From: $from\r\n";
+	$headers .= "Content-type: text/plain; charset=UTF-8\r\n";
+	mail($to, $subject, $msg, $headers);
 
 ?>
