@@ -6,7 +6,7 @@
 	$to = "housetop.mogilev@gmail.com";
 	$date = date ("d.m.Y");
 	$time = date ("h:i");
-	$from = $email;
+	$from = "housetop.mogilev@gmail.co";
 	$subject = "Заявка c сайта";
 
 
