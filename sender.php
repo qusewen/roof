@@ -6,7 +6,7 @@
 	$to = "housetop.mogilev@gmail.com";
 	$date = date ("d.m.Y");
 	$time = date ("h:i");
-	$from = replyto@example.ru;
+	$from = $email;
 	$subject = "Заявка c сайта";
 
 
@@ -15,14 +15,47 @@
     Имя: $name
     Телефон: $phone
     Коментарий: $text";
-	$headers = "From: $from\r\n";
-	$headers .= "Content-type: text/plain; charset=UTF-8\r\n";
-	mail($to, $subject, $msg, $headers);
-if (mail($to, $subject, $msg, $headers)) {
-    file_put_contents($log_file, date("Y-m-d H:i:s") . " - Письмо успешно отправлено!\n", FILE_APPEND);
-    echo "Письмо успешно отправлено!";
-} else {
-    file_put_contents($log_file, date("Y-m-d H:i:s") . " - Ошибка отправки письма.\n", FILE_APPEND);
-    echo "Ошибка при отправке письма.";
-}
+	// mail($to, $subject, $msg, "From: $from ");
+
+
+
+
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\Exception;
+
+	require_once '/PHPMailer/src/Exception.php';
+	require_once '/PHPMailer/src/PHPMailer.php';
+	require_once '/PHPMailer/src/SMTP.php';
+
+
+	$mail = new PHPMailer;
+	$mail->CharSet = 'UTF-8';
+
+	$mail->isSMTP();
+	$mail->SMTPAuth = true;
+	$mail->SMTPDebug = 0;
+
+	$mail->Host = 'ssl://smtp.gmail.com';
+	$mail->Port = 465;
+	$mail->Username = 'housetop.mogilev@gmail.com';
+	$mail->Password = 'mm3-8tw-5HM-ZLK';
+
+	// От кого
+	$mail->setFrom('housetop.mogilev@gmail.com', 'skytop.by');
+
+	// Кому
+	$mail->addAddress('housetop.mogilev@gmail.com', 'Заявка с сайта');
+
+	// Тема письма
+	$mail->Subject = $subject;
+
+	// Тело письма
+	$body = $msg;
+	$mail->msgHTML($body);
+
+	// Приложение
+	$mail->addAttachment(__DIR__ . '/image.jpg');
+
+	$mail->send();
+
 ?>
