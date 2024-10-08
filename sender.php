@@ -1,4 +1,11 @@
 <?php
+	use roof\PHPMailer-master\PHPMailer;
+	use roof\PHPMailer-master\Exception;
+
+	require_once 'PHPMailer-master/src/Exception.php';
+	require_once 'PHPMailer-master/src/PHPMailer.php';
+	require_once 'PHPMailer-master/src/SMTP.php';
+
     $name = $_POST['name'];
 	$phone = $_POST['phone'];
     $text = $_POST['text'];
@@ -17,15 +24,6 @@
     Коментарий: $text";
 	// mail($to, $subject, $msg, "From: $from ");
 
-
-
-
-	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\Exception;
-
-	require_once '/PHPMailer/src/Exception.php';
-	require_once '/PHPMailer/src/PHPMailer.php';
-	require_once '/PHPMailer/src/SMTP.php';
 
 
 	$mail = new PHPMailer;
@@ -54,7 +52,7 @@
 	$mail->msgHTML($body);
 
 	// Приложение
-	$mail->addAttachment(__DIR__ . '/image.jpg');
+	$mail->addAttachment(__DIR__ . './favicon.png');
 
 	$mail->send();
 
