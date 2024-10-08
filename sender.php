@@ -36,7 +36,7 @@
 	$mail->Host = 'ssl://smtp.gmail.com';
 	$mail->Port = 465;
 	$mail->Username = 'housetop.mogilev@gmail.com';
-	$mail->Password = 'mm3-8tw-5HM-ZLK';
+	$mail->Password = '';
 
 	// От кого
 	$mail->setFrom('housetop.mogilev@gmail.com', 'skytop.by');
